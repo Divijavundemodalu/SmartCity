@@ -8,12 +8,14 @@ Original file is located at
 """
 
 !pip install transformers accelerate sentencepiece
+from dotenv import load_dotenv
+import os
+load_dotenv()
 
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
 model_name = "ibm-granite/granite-3.3-2b-instruct"
-hf_token = "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"
-
+hf_token = os.getenv("HF_TOKEN")
 tokenizer = AutoTokenizer.from_pretrained(model_name, use_auth_token=hf_token)
 model = AutoModelForCausalLM.from_pretrained(
     model_name,

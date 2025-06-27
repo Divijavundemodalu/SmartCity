@@ -17,6 +17,9 @@ import re
 from typing import List, Dict, Any
 import hashlib
 import random
+from dotenv import load_dotenv
+import os
+load_dotenv()
 
 # Try to import fitz (PyMuPDF) - make it optional
 try:
@@ -380,7 +383,8 @@ def load_model():
     """Load IBM Granite model with HuggingFace token"""
     try:
         # You can set your HuggingFace token here or use environment variable
-        hf_token = "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"  # Your token
+        
+        hf_token = os.getenv("HF_TOKEN") # Your token
         
         model_name = "ibm-granite/granite-3.3-2b-instruct"
         
