@@ -9,7 +9,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 import torch
 import io
 import os
-import tempfile
+import tempfile 
 import base64
 import json
 from datetime import datetime, timedelta
@@ -21,7 +21,7 @@ from dotenv import load_dotenv
 import os
 load_dotenv()
 
-# Try to import fitz (PyMuPDF) - make it optional
+# Trcy to import fitz (PyMuPDF) - make it optional
 try:
     import fitz
     PDF_SUPPORT = True
